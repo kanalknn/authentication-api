@@ -1,0 +1,77 @@
+module.exports = {
+  ROLES: {
+    SUPER_ADMIN: 1,
+    ADMIN: 2,
+    OPERATIONS: 3
+  },
+  USER_STATUS: {
+    IN_ACTIVE: 1,
+    ACTIVE: 2,
+    DELETED: 3
+  },
+  TENANT_STATUS: {
+    IN_ACTIVE: 1,
+    ACTIVE: 2,
+    DELETED: 3
+  },
+  CUSTOMER_STATUS: {
+    IN_ACTIVE: 1,
+    ACTIVE: 2,
+    DELETED: 3,
+  },
+  CATEGORY_STATUS: {
+    IN_ACTIVE: 1,
+    ACTIVE: 2,
+    DELETED: 3,
+  },
+  OTP_STATUS: {
+    SUCCESS: "Success",
+    OTP_EXPIRED: "OTP Expired",
+    ERROR: "Error",
+  },
+  PRODUCT_TYPES: {
+    BEST_SELLER: 1,
+    HOT_SELLER: 2,
+  },
+
+  PRODUCT_STATUS: {
+    ACTIVE: 2,
+    INACTIVE: 1,
+    DELETED: 3,
+  },
+
+  //
+  ORDER_STATUS: {
+    UNFULFILLED: 1,
+    FULFILLED: 2,
+    PARTIALLY_FULFILLED: 3,
+    ON_HOLD: 4,
+    CANCELLED: 5,
+  },
+
+  PAYMENT_METHOD: {
+    COD: 1,
+    ONLINE: 2,
+  },
+
+  PAYMENT_STATUS: {
+    PAID: 1,
+    PENDING: 2,
+    PARTIALLY_PAID: 3,
+    REFUNDED: 4,
+    PARTIALLY_REFUNDED: 5,
+    FAILED: 6
+  },
+
+  DELIVERY_STATUS: {
+    TRACKING_ADDED: 1,
+    IN_TRANSIT: 2,
+    OUT_FOR_DELIVERY: 3,
+    DELIVERED: 4,
+  },
+
+  SHIPPING_PARTNER: {
+    PROFESSIONAL_COURIER: 1,
+    DELHIVERY: 2,
+  },
+};
