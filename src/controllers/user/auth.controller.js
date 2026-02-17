@@ -12,6 +12,9 @@ const { verifyGoogleToken } = require('../../utilities/googleAuth');
 const response = require("../../responses/responses");
 const responseStatus = require("../../constants/httpCodes");
 const { validate, getValidationSchema } = require('../../validators/authValidator');
+const { getClientInfo } = require('../../utilities/clientInfo');
+const prisma = require('../../config/database');
+
 
 // In-memory storage for pending signups (consider using Redis in production)
 const pendingSignups = new Map();
@@ -68,17 +71,32 @@ exports.loginWithGoogle = async (req, res) => {
     const { token } = req.body;
     const googleUser = await verifyGoogleToken(token);
     const user = await userAuthService.findOrCreateUserByGoogle(googleUser);
-    
+
+    // Log activity
+    const { ip, userAgent, deviceType, browser, os } = getClientInfo(req);
+    await prisma.loginActivity.create({
+      data: {
+        userId: user.id,
+        ipAddress: ip,
+        userAgent: userAgent,
+        deviceType: deviceType,
+        browser: browser,
+        os: os,
+        status: 'SUCCESS'
+      }
+    });
+
     const jwtToken = generateToken({ id: user.id, role: 'user' });
 
+
     return response.success(
-      req, 
-      res, 
-      responseStatus.HTTP_OK, 
+      req,
+      res,
+      responseStatus.HTTP_OK,
       {
         token: jwtToken,
-        user: { id: user.id, email: user.email, name:user.name }
-      }, 
+        user: { id: user.id, email: user.email, name: user.name }
+      },
       "Google login successful"
     );
   } catch (error) {
@@ -138,16 +156,31 @@ exports.loginWithEmail = async (req, res) => {
     const { email, password } = req.body;
     const user = await userAuthService.loginWithEmail(email, password);
 
+    // Log activity
+    const { ip, userAgent, deviceType, browser, os } = getClientInfo(req);
+    await prisma.loginActivity.create({
+      data: {
+        userId: user.id,
+        ipAddress: ip,
+        userAgent: userAgent,
+        deviceType: deviceType,
+        browser: browser,
+        os: os,
+        status: 'SUCCESS'
+      }
+    });
+
     const token = generateToken({ id: user.id, role: 'user' });
 
+
     return response.success(
-      req, 
-      res, 
-      responseStatus.HTTP_OK, 
+      req,
+      res,
+      responseStatus.HTTP_OK,
       {
         token,
         user: { id: user.id, email: user.email, name: user.name }
-      }, 
+      },
       "Login successful"
     );
   } catch (error) {
@@ -283,10 +316,10 @@ exports.signup = async (req, res) => {
     await emailService.sendOTPEmail(email, otp);
 
     return response.success(
-      req, 
-      res, 
-      responseStatus.HTTP_CREATED, 
-      { signupToken, name }, 
+      req,
+      res,
+      responseStatus.HTTP_CREATED,
+      { signupToken, name },
       "OTP sent to email for verification"
     );
   } catch (err) {
@@ -356,7 +389,7 @@ exports.verifyOTP = async (req, res) => {
     }
 
     const { signupToken, otp } = req.body;
-    
+
     // Get signup data from memory
     const signupData = pendingSignups.get(signupToken);
     if (!signupData) {
@@ -396,17 +429,17 @@ exports.verifyOTP = async (req, res) => {
     const token = generateToken({ id: user.id, role: 'user' });
 
     return response.success(
-      req, 
-      res, 
-      responseStatus.HTTP_CREATED, 
+      req,
+      res,
+      responseStatus.HTTP_CREATED,
       {
         token,
-        user: { 
-          id: user.id, 
-          email: user.email, 
-          name: user.name 
+        user: {
+          id: user.id,
+          email: user.email,
+          name: user.name
         }
-      }, 
+      },
       "Account created and verified successfully"
     );
   } catch (err) {
@@ -454,7 +487,7 @@ exports.resendOTP = async (req, res) => {
     }
 
     const { signupToken } = req.body;
-    
+
     const signupData = pendingSignups.get(signupToken);
     if (!signupData) {
       return response.fail(req, res, responseStatus.HTTP_BAD_REQUEST, "Invalid or expired signup session");
