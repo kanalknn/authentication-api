@@ -37,6 +37,8 @@ setInterval(async () => {
 // Imported Routes
 const adminAuthRoutes = require('./routes/admin/auth.routes');
 const adminRoutes = require('./routes/admin/admin.routes');
+const studentRoutes = require('./routes/admin/student.routes');
+const noteRoutes = require('./routes/admin/note.routes');
 const userAuthRoutes = require('./routes/user/auth.routes');
 
 
@@ -46,6 +48,8 @@ const userAuthRoutes = require('./routes/user/auth.routes');
 //Routes
 app.use('/api/admin/auth', adminAuthRoutes);
 app.use('/api/admin', adminRoutes);
+app.use('/api/admin/students', studentRoutes);
+app.use('/api/admin/notes', noteRoutes);
 app.use('/api/user/auth', userAuthRoutes);
 
 
