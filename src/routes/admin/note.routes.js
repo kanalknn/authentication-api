@@ -4,8 +4,8 @@ const noteController = require('../../controllers/admin/note.controller');
 const adminAuth = require('../../middleware/adminAuth');
 
 router.post('/', adminAuth(['admin']), noteController.createNote);
-router.get('/', noteController.getAllNotes);
-router.get('/:id', noteController.getNoteById);
+router.get('/', adminAuth(['admin', 'editor', 'viewer', 'user']), noteController.getAllNotes);
+router.get('/:id', adminAuth(['admin', 'editor', 'viewer', 'user']), noteController.getNoteById);
 router.put('/:id', adminAuth(['admin']), noteController.updateNote);
 router.delete('/:id', adminAuth(['admin']), noteController.deleteNote);
 

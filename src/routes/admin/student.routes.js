@@ -4,8 +4,8 @@ const studentController = require('../../controllers/admin/student.controller');
 const adminAuth = require('../../middleware/adminAuth');
 
 router.post('/', adminAuth(['admin']), studentController.createStudent);
-router.get('/', adminAuth(['admin']), studentController.getAllStudents);
-router.get('/:id', adminAuth(['admin']), studentController.getStudentById);
+router.get('/', adminAuth(['admin', 'editor', 'viewer', 'user']), studentController.getAllStudents);
+router.get('/:id', adminAuth(['admin', 'editor', 'viewer', 'user']), studentController.getStudentById);
 router.put('/:id', adminAuth(['admin']), studentController.updateStudent);
 router.delete('/:id', adminAuth(['admin']), studentController.deleteStudent);
 
