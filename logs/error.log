@@ -1,0 +1,38 @@
+{"level":"error","message":"POST /api/admin/auth/login → \nInvalid `prisma.admin.findUnique()` invocation in\nC:\\Users\\USER\\Documents\\GitHub\\authentication-api\\src\\models\\admin.model.js:8:29\n\n  5 const passwordHashRounds = parseInt(process.env.PASSWORD_HASH_ROUNDS) || 10;\n  6 \n  7 const findAdminByEmail = async (email) => {\n→ 8   return await prisma.admin.findUnique(\nAuthentication failed against database server, the provided database credentials for `root` are not valid.\n\nPlease make sure to provide valid database credentials for the database server at the configured address.","timestamp":"2026-02-23T17:50:14.274Z"}
+{"level":"error","message":"POST /api/admin/auth/login → \nInvalid `prisma.admin.findUnique()` invocation in\nC:\\Users\\USER\\Documents\\GitHub\\authentication-api\\src\\models\\admin.model.js:8:29\n\n  5 const passwordHashRounds = parseInt(process.env.PASSWORD_HASH_ROUNDS) || 10;\n  6 \n  7 const findAdminByEmail = async (email) => {\n→ 8   return await prisma.admin.findUnique(\nAuthentication failed against database server, the provided database credentials for `root` are not valid.\n\nPlease make sure to provide valid database credentials for the database server at the configured address.","timestamp":"2026-02-23T17:50:19.639Z"}
+{"level":"error","message":"POST /api/user/auth/signup → Failed to initiate signup process","timestamp":"2026-02-23T18:02:30.014Z"}
+{"level":"error","message":"POST /api/user/auth/signup → Failed to initiate signup process","timestamp":"2026-02-25T05:13:47.939Z"}
+{"level":"error","message":"POST /api/admin/auth/login → Invalid password","timestamp":"2026-02-25T05:38:04.967Z"}
+{"level":"error","message":"POST /api/admin/auth/login → Invalid password","timestamp":"2026-02-25T06:27:15.886Z"}
+{"level":"error","message":"POST /api/user/auth/signup → Failed to initiate signup process","timestamp":"2026-02-25T06:28:41.387Z"}
+{"level":"error","message":"POST /api/user/auth/signup → Failed to initiate signup process","timestamp":"2026-02-25T06:28:43.704Z"}
+{"level":"error","message":"POST /api/admin/auth/login → Admin not found","timestamp":"2026-02-25T06:29:12.148Z"}
+{"level":"error","message":"POST /api/admin/auth/login → Admin not found","timestamp":"2026-02-25T06:29:15.881Z"}
+{"level":"error","message":"POST /api/admin/auth/login → Admin not found","timestamp":"2026-02-25T06:29:16.881Z"}
+{"level":"error","message":"POST /api/user/auth/signup → Failed to initiate signup process","timestamp":"2026-02-26T05:48:47.807Z"}
+{"level":"error","message":"POST /api/user/auth/signup → Failed to initiate signup process","timestamp":"2026-02-26T06:06:07.002Z"}
+{"level":"error","message":"POST /api/admin/auth/login → Admin not found","timestamp":"2026-02-26T06:06:10.345Z"}
+{"level":"error","message":"POST /api/user/auth/signup → Failed to initiate signup process","timestamp":"2026-03-02T05:31:14.410Z"}
+{"level":"error","message":"POST /api/user/auth/signup → Failed to initiate signup process","timestamp":"2026-03-02T05:31:17.565Z"}
+{"level":"error","message":"POST /api/user/auth/signup → Failed to initiate signup process","timestamp":"2026-03-02T05:31:47.888Z"}
+{"level":"error","message":"POST /api/user/auth/signup → Failed to initiate signup process","timestamp":"2026-03-02T05:37:11.046Z"}
+{"level":"error","message":"POST /api/admin/auth/login → Admin not found","timestamp":"2026-03-02T05:37:15.247Z"}
+{"level":"error","message":"POST /api/admin/auth/login → Admin not found","timestamp":"2026-03-02T05:37:18.061Z"}
+{"level":"error","message":"POST /api/user/auth/signup → Failed to initiate signup process","timestamp":"2026-03-02T13:03:33.952Z"}
+{"level":"error","message":"POST /api/admin/auth/login → Admin not found","timestamp":"2026-03-02T13:42:56.544Z"}
+{"level":"error","message":"POST /api/admin/auth/login → Admin not found","timestamp":"2026-03-02T13:43:01.329Z"}
+{"level":"error","message":"POST /api/user/auth/signup → Failed to initiate signup process","timestamp":"2026-03-02T13:44:38.230Z"}
+{"level":"error","message":"POST /api/admin/auth/login → Admin not found","timestamp":"2026-03-02T13:45:10.577Z"}
+{"level":"error","message":"POST /api/user/auth/signup → Failed to initiate signup process","timestamp":"2026-03-02T13:45:27.277Z"}
+{"level":"error","message":"POST /api/user/auth/signup → Failed to initiate signup process","timestamp":"2026-03-02T13:47:26.780Z"}
+{"level":"error","message":"POST /api/user/auth/signup → Failed to initiate signup process","timestamp":"2026-03-02T13:47:30.790Z"}
+{"level":"error","message":"POST /api/admin/auth/login → Admin not found","timestamp":"2026-03-02T13:52:25.850Z"}
+{"level":"error","message":"POST /api/admin/auth/login → Admin not found","timestamp":"2026-03-02T13:52:48.751Z"}
+{"level":"error","message":"POST /api/admin/auth/login → Admin not found","timestamp":"2026-03-02T13:52:58.742Z"}
+{"level":"error","message":"POST /api/admin/auth/login → Admin not found","timestamp":"2026-03-04T17:50:51.966Z"}
+{"level":"error","message":"POST /api/admin/auth/login → Admin not found","timestamp":"2026-03-04T17:51:18.151Z"}
+{"level":"error","message":"POST /api/admin/auth/login → Admin not found","timestamp":"2026-03-04T18:01:03.498Z"}
+{"level":"error","message":"POST /api/admin/auth/login → Admin not found","timestamp":"2026-03-04T18:01:16.875Z"}
+{"level":"error","message":"POST /api/admin/auth/login → Admin not found","timestamp":"2026-03-04T18:05:06.855Z"}
+{"level":"error","message":"POST /api/admin/auth/login → Admin not found","timestamp":"2026-03-05T05:07:36.195Z"}
+{"level":"error","message":"POST /api/admin/auth/login → Admin not found","timestamp":"2026-03-05T05:11:42.301Z"}
