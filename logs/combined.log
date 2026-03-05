@@ -215,3 +215,9 @@
 {"level":"info","message":"POST /api/admin/auth/login → Success","timestamp":"2026-03-05T05:23:42.517Z"}
 {"level":"info","message":"POST /api/admin/auth/login → Success","timestamp":"2026-03-05T05:29:48.403Z"}
 {"level":"info","message":"POST /api/admin/auth/login → Success","timestamp":"2026-03-05T05:31:14.827Z"}
+{"level":"info","message":"POST /api/admin/auth/logout → Successfully logged out","timestamp":"2026-03-05T05:36:40.298Z"}
+{"level":"info","message":"POST /api/admin/auth/login → Success","timestamp":"2026-03-05T05:36:58.475Z"}
+{"level":"info","message":"POST /api/admin/auth/login → Success","timestamp":"2026-03-05T05:37:30.275Z"}
+{"level":"info","message":"POST /api/admin/auth/login → Success","timestamp":"2026-03-05T05:37:45.058Z"}
+{"level":"info","message":"POST /api/admin/auth/login → Success","timestamp":"2026-03-05T05:46:06.162Z"}
+{"level":"info","message":"POST /api/admin/auth/login → Success","timestamp":"2026-03-05T05:46:40.698Z"}
